@@ -102,10 +102,10 @@ int queueerr(int errcode)
     switch (errcode)
     {
     case QUEUEEMPTY:
-        printf("%d STACK EMPTY!\n",errcode);
+        printf("%d QUEUE EMPTY!\n",errcode);
         break;
     case QUEUEALLOCATIONERR:
-        printf("%d STACK ALLOCATION ERR!\n",errcode);
+        printf("%d QUEUE ALLOCATION ERR!\n",errcode);
         break;
     default:
         printf("unknown %d\n",errcode);

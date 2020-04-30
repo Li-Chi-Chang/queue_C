@@ -10,10 +10,14 @@
 
 typedef struct queueData
 {
-    int integer;
+    //the location of this node
+    unsigned int locationX;
+    unsigned int locationY;
+    //the next dir, like travelDir = NORTH;
+    char travelDir;
 }queueData;
 
-// struct for the stack
+// struct for the queue
 typedef struct queueNode
 {
     queueData data;
@@ -27,36 +31,36 @@ typedef struct
 }queueBase;
 
 /**
- * descreption: init this stack
+ * descreption: init this queue
  * input:
- * output: a stack base
+ * output: a queue base
  */
 queueBase* initQueueBase();
 
 /**
- * descreption: push data into the stack
- * input: the stack base, data in unsigned int format
+ * descreption: push data into the queue
+ * input: the queue base, data in unsigned int format
  * output: 0:success, 1 err
  */
 int pushQueue(queueBase*, queueData);
 
 /**
- * descreption: pop the top layer of this stack
- * input: the stack base
+ * descreption: pop the top layer of this queue
+ * input: the queue base
  * output: data in unsigned int
  */
 queueData popQueue(queueBase*);
 
 /**
- * descreption: get the length of this stack
- * input: the stack base
- * output: the length of this stack
+ * descreption: get the length of this queue
+ * input: the queue base
+ * output: the length of this queue
  */
 int getQueueLen(queueBase*);
 
 /**
  * descreption: free all the space
- * input: the stack base
+ * input: the queue base
  * output: 0 success
  */
 int freeQueue(queueBase*);
